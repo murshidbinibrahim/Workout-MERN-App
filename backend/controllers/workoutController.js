@@ -52,7 +52,8 @@ const updateWorkout = async (req, res) => {
 
     const workouts = await Workout.findOneAndUpdate(
       { _id: id },
-      { ...req.body }
+      { ...req.body },
+      { new: true }
     );
 
     if (!workouts) {
