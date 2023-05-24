@@ -18,9 +18,12 @@ function Home() {
           payload: json,
         });
       }
+      console.log("useEffect");
     };
     fetchData();
-  }, []);
+  }, [dispatch]);
+
+  console.log("render");
 
   return (
     <div className="home">
