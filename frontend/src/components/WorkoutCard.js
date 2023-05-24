@@ -5,6 +5,7 @@ const WorkoutCard = ({ workout }) => {
   const { dispatch } = useWorkoutContext();
 
   const handleClick = async () => {
+    console.log("inside handleClick");
     try {
       const response = await fetch(
         "http://localhost:8000/api/workouts/" + workout._id,
@@ -17,6 +18,8 @@ const WorkoutCard = ({ workout }) => {
       );
 
       const json = await response.json();
+
+      console.log("Workout Deleted", json);
 
       if (response.ok) {
         dispatch({
